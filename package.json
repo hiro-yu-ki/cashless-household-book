@@ -1,0 +1,24 @@
+{
+  "name": "cashless-book-pwa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "dev:worker": "wrangler dev --local",
+    "db:migrate:local": "wrangler d1 migrations apply cashless-book --local",
+    "deploy:dry-run": "wrangler deploy --dry-run",
+    "build": "node scripts/build.js",
+    "lint": "node scripts/check.js lint",
+    "typecheck": "node scripts/check.js typecheck",
+    "security": "node scripts/check.js security",
+    "test": "node --test",
+    "check": "node scripts/check.js all && node --test && node scripts/build.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "wrangler": "^4.127.1"
+  }
+}

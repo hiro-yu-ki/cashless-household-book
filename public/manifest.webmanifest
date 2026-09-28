@@ -1,0 +1,5 @@
+{
+  "name":"さっと家計簿 - キャッシュレス自動記帳","short_name":"さっと家計簿","lang":"ja","start_url":"/","display":"standalone","background_color":"#f5f7f6","theme_color":"#0f766e",
+  "icons":[{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}],
+  "shortcuts":[{"name":"支出を追加","url":"/#entry","icons":[{"src":"/icon.svg","sizes":"any"}]},{"name":"未確認を処理","url":"/#inbox","icons":[{"src":"/icon.svg","sizes":"any"}]}]
+}

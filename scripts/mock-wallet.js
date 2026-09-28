@@ -1,0 +1,2 @@
+const sources=['apple_wallet','paypay','suica','aeonpay','credit_card'];const merchants=['ローソン 新宿店','JR東日本','イオンスタイル','ABC COFFEE'];const n=Number(process.argv[2]||5);
+for(let i=0;i<n;i++)console.log(JSON.stringify({amount:100+Math.floor(Math.random()*4900),merchant:merchants[i%merchants.length],occurredAt:new Date(Date.now()-i*3600000).toISOString(),paymentSource:sources[i%sources.length],sourceEventId:`mock-${Date.now()}-${i}`,note:'local mock; no external request'}));

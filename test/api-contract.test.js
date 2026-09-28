@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
+test('worker exposes ingestion sources and CRUD/report endpoints',async()=>{const s=await readFile('src/worker/index.js','utf8');for(const path of ['/api/ingest','shortcuts|wallet|paypay|suica|aeonpay|credit-card','/api/transactions','/api/summary','/api/export.csv','/api/backup','/api/restore','/api/sync'])assert.ok(s.includes(path),path)});
+test('external ingestion requires bearer secret and safe comparison',async()=>{const s=await readFile('src/worker/index.js','utf8');assert.match(s,/INGEST_API_TOKEN/);assert.match(s,/timingSafe/);assert.match(s,/unauthorized/)});
+test('offline sync preserves the client entity ID',async()=>{const s=await readFile('src/worker/index.js','utf8');assert.match(s,/createOrUpdateTransaction\([^;]+undefined,op\.entityId\)/)});
