@@ -43,7 +43,7 @@ node scripts/build.js
 
 ## 取込
 
-外部取込は`POST /api/ingest`または`POST /api/ingest/{shortcuts|wallet|paypay|suica|aeonpay|credit-card}`です。`Authorization: Bearer <INGEST_API_TOKEN>`が必須です。payload定義は [docs/shortcut-payload.schema.json](docs/shortcut-payload.schema.json)、iPhone設定は [docs/SHORTCUTS.md](docs/SHORTCUTS.md) にあります。
+外部取込は`POST /api/ingest`または`POST /api/ingest/{shortcuts|wallet|paypay|suica|aeonpay|credit-card}`です。`Authorization: Bearer <INGEST_API_TOKEN>`が必須です。payload定義は docs/shortcut-payload.schema.json、iPhone設定は docs/SHORTCUTS.md にあります。
 
 公式の公開取得手段がないサービスに非公開APIは仮定していません。スクリーンショットの端末内`TextDetector`（対応ブラウザーのみ）、clipboard/text、CSV、クイック手入力がfallbackです。画像はサーバーへ送信しません。
 
@@ -55,7 +55,7 @@ node scripts/mock-wallet.js 10
 
 ## 設定
 
-`.env.example`を参照し、実値は`.dev.vars`またはCloudflare secretへ設定します。秘密値をGit、Shortcuts手順書、Backlogへ記載しないでください。本番設定は [docs/CLOUDFLARE_DEPLOY.md](docs/CLOUDFLARE_DEPLOY.md) を参照してください。
+`.env.example`を参照し、実値は`.dev.vars`またはCloudflare secretへ設定します。秘密値をGit、Shortcuts手順書、Backlogへ記載しないでください。本番設定は docs/CLOUDFLARE_DEPLOY.md を参照してください。
 
 ## 制約
 
@@ -63,4 +63,4 @@ node scripts/mock-wallet.js 10
 - ブラウザーの`TextDetector`非対応時は端末内OCRを使えないため、同じ画面から手入力へ移れます。
 - 競合同期は最終更新を受け付ける単一利用者向け第一版です。操作IDにより再送は二重適用されません。
 
-プライバシーは [PRIVACY.md](PRIVACY.md)、脆弱性報告と防御設計は [SECURITY.md](SECURITY.md)、引き継ぎは [HANDOVER.md](HANDOVER.md) にあります。
+プライバシーは [PRIVACY.md](PRIVACY.md)、脆弱性報告と防御設計は [SECURITY.md](SECURITY.md)、引き継ぎは HANDOVER.md にあります。
